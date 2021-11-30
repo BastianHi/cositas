@@ -103,20 +103,41 @@ include("crearComentario.php");
 						<h6 class="m-3">Fecha: 15-07-2021 </h6> 
 						<h6 class="m-3">Hora: 18:00 hrs </h6>
 						
-						<form action="crearComentario.php"  method="POST">	
-
-						<div class="form-group  row" style="text-align: center; margin-left: 20px; margin-top:20px;">
-						
-						
-							<input type="text" name="coment1" class="form-control" placeholder="Inserte aquí su comentario..." style="width: 300px;height: 80px;" required >
-								  
-						
-							<div  class="offset-10" style=" margin-left: 60px; margin-top:20px;">
-								<button type="submit" class="btn btn-primary">Comentar</button>
-							</div> 
-		
-							</div> 
-						 </form>
+						<div class="modal fade" id="NuevoEmpleado" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="staticBackdropLabel">Comentar</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+        </div>
+        <div class="modal-body">
+            <form  action="crearComentario.php"  method="POST"    >
+			<div class="row">
+                   
+				   </div>
+				   <div >
+					   <div>
+						   <label>Usuario</label>
+						   <input type="text" class="form-control" name="nombre" required>
+					   </div>
+					   <div >
+						   <label>Comentario</label>
+						 
+						<input style="text-align: center; margin-bottom: 10px;" type="text" name="coment1" class="form-control" placeholder="Inserte aquí su comentario..." style=" width: 300px;height: 80px;" required >
+								
+					   </div>
+				   </div>
+   
+				   <div class="offset-10">
+					   <button type="submit" class="btn btn-primary">Enviar</button>
+				   </div>
+              </form>
+            
+        </div>
+        
+      </div>
+    </div>
+  </div>
 						</div>
 				</div>
 				</div>
@@ -162,6 +183,11 @@ include("crearComentario.php");
 		uiLibrary: 'bootstrap4'
 	});
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+   
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
 
 </body>
 </html>
