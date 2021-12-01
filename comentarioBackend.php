@@ -1,7 +1,7 @@
 <?php
 require_once("bd.php");
 
-$ConsultaComentarioSQL ="SELECT * FROM `comentar`";
+$ConsultaComentarioSQL ="select * from `comentar`";
 $ConsultaComentario =  mysqli_query($con, $ConsultaComentarioSQL);
 
 ?>
