@@ -10,7 +10,7 @@ if (isset($_POST["coment1"])) {
 
 
 //$comentar = $_POST["coment1"];
-$crearComentarioSQL = "INSERT INTO `comentar` (`id_acta`, `usuario`, `descripcion`) VALUES (".$id_acta.",'$usuario','$comentar')";
+$crearComentarioSQL = "insert into `comentar` (`id_acta`, `usuario`, `descripcion`) values (".$id_acta.",'$usuario','$comentar')";
 $crearComentario = mysqli_query($con, $crearComentarioSQL);
 header("Location: index.php");
 ?>
