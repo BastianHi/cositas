@@ -1,8 +1,10 @@
 <?php
 require_once("bd.php");
 $id_acta='1250';
-$usuario = 'Juan Campos';
 
+if (isset($_POST["nombre"])) {
+    $usuario = $_POST["nombre"];
+}
 if (isset($_POST["coment1"])) {
     $comentar = $_POST["coment1"];
 }
