@@ -1,6 +1,8 @@
 <?php
 
 include("comentarioBackend.php");
+include("ActaBackend.php");
+
 //include("crearComentario.php");
 
 ?>
@@ -93,12 +95,16 @@ include("comentarioBackend.php");
 
 				<div style="margin-top: 20px;margin-bottom: 10px;">
 					<div  class="espaciador w-50	 m-auto mt-3 border bg-white" style="border-radius:20px;text-align: center;">
-						<h2 class="titulo m-3">Reunion 5</h2>
+						<h2 class="titulo m-3">Acta: Reunion 5</h2>
 						<h3 class="m-3"> Tema: Porton</h3>
 						
 						<p class=" m-3" style="text-align:justify;">  
-							Delegado Juan Fuentes: En la reunion de ayer quedó acordado que se instalarán portones 
-									en la entrada y salida del pasaje, todo para la seguridad de la comunidad.
+						<?php
+			if($ConsultaActa): foreach($ConsultaActa as $key):  ?>
+				
+				<?= $key['acta']  ?> 
+
+				<?php endforeach; endif; ?>
 						</p>
 						<h6 class="m-3">Fecha: 15-07-2021 </h6> 
 						<h6 class="m-3">Hora: 18:00 hrs </h6>
