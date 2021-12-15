@@ -23,7 +23,7 @@ require_once("bd.php");
 	<title>Menú</title>
 
 	<style type="text/css">
-		h5{
+		h6{
 			color: red;
 			font-size: 15px;
 		}
@@ -50,14 +50,14 @@ require_once("bd.php");
 				<h1>NeighMeet</h1>
 			</div>
 			<div class="3">
-				<h5><a>Contactanos|</a></h5>
+				<h6><a>Contactanos|</a></h6>
 
 			</div>
 			<div class="3">			
-				<h5><a> Ayuda|</a></h5>
+				<h6><a> Ayuda|</a></h6>
 			</div>
 			<div class="3">
-				<h5> <a>Cerrar sesion</a></h5>
+				<h6> <a>Cerrar sesion</a></h6>
 			</div>
 		</div>
 		
@@ -89,18 +89,28 @@ require_once("bd.php");
 							</button>
 						</div>
 					</div>
-					
 
+				
+				<?php
+			if($ConsultaReunion): foreach($ConsultaReunion as $key):  ?>
 				<div style="margin-top: 20px;margin-bottom: 10px;">
 					<div  class="espaciador w-50	 m-auto mt-3 border bg-white" style="border-radius:20px;text-align: center;">
-						<h2 class="titulo m-3">Reunion 5</h2>
-						<h3 class="m-3"> Tema: Porton</h3>
-						<h6 class="m-3">Fecha: 15-07-2021 </h6> 
-						<h6 class="m-3">Hora: 18:00 hrs </h6>
-						
-						<div class="col-12 " style="margin-bottom:20px">
-                <button type="button" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#NuevaActa">Agregar acta</button>
-                </div>
+				<tr>
+				<h1 class="titulo m-3">Reunión: <?= $key['id_reunion'] ?> </h1>
+				<h3 class="m-3">Tema: <?= $key['tema']  ?>  </h3>
+				<h5 class="m-3">	  <?= $key['descripcion']  ?>  </h5>
+				<h4	 class="m-3">	  <?= $key['fecha']  ?>  </h4>
+				<h4 class="m-3">Lugar:	  <?= $key['lugar']  ?>  </h4>
+				</tr>
+			<div class="col-12 " style="margin-bottom:20px">
+				<button type="button" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#NuevaActa">Agregar acta</button>
+				</div>
+				</div>
+				</div>
+
+				<?php endforeach; endif; ?> 
+				
+				
 						     <!-- Modal -->
 							 <div class="modal fade" id="NuevaActa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
