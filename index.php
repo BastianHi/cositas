@@ -96,7 +96,7 @@ require_once("bd.php");
 				<div style="margin-top: 20px;margin-bottom: 10px;">
 					<div  class="espaciador w-50	 m-auto mt-3 border bg-white" style="border-radius:20px;text-align: center;">
 				<tr>
-				<h2 class="titulo m-3">Reunión: <?= $key['id_reunion'] ?> </h2>
+				<h2 class="titulo m-3">Reunión Junta Vecinos</h2>
 				<h4 class="m-3">Tema: <?= $key['tema']  ?>  </h4>
 				<h5 class="m-3">	  <?= $key['descripcion']  ?>  </h5>
 				<h4	 class="m-3">	  <?= $key['fecha']  ?>  </h4>
