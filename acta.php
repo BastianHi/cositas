@@ -101,23 +101,13 @@ include("reunionBackend.php");
 			
 				<h1 class="titulo m-3">Acta: Reunión <?= $key['id_reunion'] ?> </h1>
 				<h3 class="m-3">Tema: <?= $key['tema']  ?>  </h3>
-			<?php
+			
+				<?php endforeach; endif; ?> 
+				<?php
 				if($ConsultaActa): foreach($ConsultaActa as $key):  ?>				
 				<h3 class="m-3"><?= $key['acta']  ?>  </h3>
 				<?php endforeach; endif; ?>
-				<?php endforeach; endif; ?> 
 				
-				
-			
-
-				
-				
-			
-				
-						
-						
-					
-						
 						<div class="col-12 " style="margin-bottom:20px">
                 <button type="button" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#NuevoEmpleado">Comentar</button>
                 </div>
