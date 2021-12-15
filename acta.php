@@ -101,13 +101,14 @@ include("reunionBackend.php");
 			
 				<h1 class="titulo m-3">Acta: Reunión <?= $key['id_reunion'] ?> </h1>
 				<h3 class="m-3">Tema: <?= $key['tema']  ?>  </h3>
-			
+			<?php
+				if($ConsultaActa): foreach($ConsultaActa as $key):  ?>				
+				<h3 class="m-3"><?= $key['acta']  ?>  </h3>
+				<?php endforeach; endif; ?>
 				<?php endforeach; endif; ?> 
 				
-				<?php
-			if($ConsultaActa): foreach($ConsultaActa as $key):  ?>				
-				<?= $key['acta']  ?> 
-				<?php endforeach; endif; ?>
+				
+			
 
 				
 				
