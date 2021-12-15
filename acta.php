@@ -105,7 +105,7 @@ include("reunionBackend.php");
 				<?php endforeach; endif; ?> 
 				<?php
 				if($ConsultaActa): foreach($ConsultaActa as $key):  ?>				
-				<h3 class="m-3"> <?= $key['acta']  ?>  </h3>
+				<h4 class="m-3"> <?= $key['acta']  ?>  </h4>
 				<?php endforeach; endif; ?>
 				
 						<div class="col-12 " style="margin-bottom:20px">
