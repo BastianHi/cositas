@@ -96,11 +96,11 @@ require_once("bd.php");
 				<div style="margin-top: 20px;margin-bottom: 10px;">
 					<div  class="espaciador w-50	 m-auto mt-3 border bg-white" style="border-radius:20px;text-align: center;">
 				<tr>
-				<h1 class="titulo m-3">Reunión: <?= $key['id_reunion'] ?> </h1>
-				<h3 class="m-3">Tema: <?= $key['tema']  ?>  </h3>
+				<h2 class="titulo m-3">Reunión: <?= $key['id_reunion'] ?> </h2>
+				<h4 class="m-3">Tema: <?= $key['tema']  ?>  </h4>
 				<h5 class="m-3">	  <?= $key['descripcion']  ?>  </h5>
 				<h4	 class="m-3">	  <?= $key['fecha']  ?>  </h4>
-				<h4 class="m-3">Lugar:	  <?= $key['lugar']  ?>  </h4>
+				
 				</tr>
 			<div class="col-12 " style="margin-bottom:20px">
 				<button type="button" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#NuevaActa">Agregar acta</button>
