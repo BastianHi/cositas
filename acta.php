@@ -1,9 +1,7 @@
 <?php
 
-include("comentarioBackend.php");
-include("actaBackend.php");
-
-//include("crearComentario.php");
+include("reunionBackend.php");
+require_once("bd.php");
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +23,7 @@ include("actaBackend.php");
 	<title>Menú</title>
 
 	<style type="text/css">
-		h5{
+		h6{
 			color: red;
 			font-size: 15px;
 		}
@@ -52,14 +50,14 @@ include("actaBackend.php");
 				<h1>NeighMeet</h1>
 			</div>
 			<div class="3">
-				<h5><a>Contactanos|</a></h5>
+				<h6><a>Contactanos|</a></h6>
 
 			</div>
 			<div class="3">			
-				<h5><a> Ayuda|</a></h5>
+				<h6><a> Ayuda|</a></h6>
 			</div>
 			<div class="3">
-				<h5> <a>Cerrar sesion</a></h5>
+				<h6> <a>Cerrar sesion</a></h6>
 			</div>
 		</div>
 		
@@ -68,7 +66,7 @@ include("actaBackend.php");
 
 			<button type="button" class="btn btn-primary">Ingresar a reunión</button>
 			<button style="margin-left: 70px;"type="button" class="btn btn-primary">Noticias</button>
-			<button href="acta.php" style="margin-left: 70px;" type="button" class="btn btn-primary">Registro de Reuniones Realizadas</button>
+			<button style="margin-left: 70px;" type="button" class="btn btn-primary">Registro de Reuniones Realizadas</button>
 		</div>
 		<hr>
 		
@@ -91,37 +89,38 @@ include("actaBackend.php");
 							</button>
 						</div>
 					</div>
-					
 
+				
+				<?php
+			if($ConsultaReunion): foreach($ConsultaReunion as $key):  ?>
 				<div style="margin-top: 20px;margin-bottom: 10px;">
 					<div  class="espaciador w-50	 m-auto mt-3 border bg-white" style="border-radius:20px;text-align: center;">
-						<h2 class="titulo m-3">Acta: Reunion 5</h2>
-						<h3 class="m-3"> Tema: Porton</h3>
-						
-						<p class=" m-3" style="text-align:justify;">  
-						<?php
-			if($ConsultaActa): foreach($ConsultaActa as $key):  ?>
-				
-				<?= $key['acta']  ?> 
+				<tr>
+				<h1 class="titulo m-3">Reunión: <?= $key['id_reunion'] ?> </h1>
+				<h3 class="m-3">Tema: <?= $key['tema']  ?>  </h3>
+				<h5 class="m-3">	  <?= $key['descripcion']  ?>  </h5>
+				<h4	 class="m-3">	  <?= $key['fecha']  ?>  </h4>
+				<h4 class="m-3">Lugar:	  <?= $key['lugar']  ?>  </h4>
+				</tr>
+			<div class="col-12 " style="margin-bottom:20px">
+				<button type="button" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#NuevaActa">Agregar acta</button>
+				</div>
+				</div>
+				</div>
 
-				<?php endforeach; endif; ?>
-						</p>
-						<h6 class="m-3">Fecha: 15-07-2021 </h6> 
-						<h6 class="m-3">Hora: 18:00 hrs </h6>
-						
-						<div class="col-12 " style="margin-bottom:20px">
-                <button type="button" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#NuevoEmpleado">Comentar</button>
-                </div>
+				<?php endforeach; endif; ?> 
+				
+				
 						     <!-- Modal -->
-							 <div class="modal fade" id="NuevoEmpleado" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							 <div class="modal fade" id="NuevaActa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="staticBackdropLabel">Comentar</h4>
+          <h4 class="modal-title" id="staticBackdropLabel">Ingresar acta</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
         </div>
         <div class="modal-body">
-            <form  action="crearComentario.php"  method="POST"    >
+            <form  action="crearActa.php"  method="POST"    >
 			<div class="row">
                    
 				   </div>
@@ -131,9 +130,9 @@ include("actaBackend.php");
 						   <input type="text" class="form-control" name="nombre" required>
 					   </div>
 					   <div >
-						   <label>Comentario</label>
+						   <label>Descripción acta</label>
 						 
-						<input style="text-align: center; margin-bottom: 10px;" type="text" name="coment1" class="form-control" placeholder="Inserte aquí su comentario..." style=" width: 300px;height: 80px;" required >
+						<input style="text-align: center; margin-bottom: 10px;width: 470px;height: 100px;" type="text" name="coment1" class="form-control" placeholder="Inserte aquí su acta..." required >
 								
 					   </div>
 				   </div>
@@ -151,29 +150,7 @@ include("actaBackend.php");
 						</div>
 				</div>
 				</div>
-			   <div class="espaciador w-50	 m-auto mt-3 border bg-white" style="border-radius:20px;text-align: center;">
-			   <table class="table table-striped" style="margin-top: 20px;">
-				<h4 style="text-align: center;margin-top: 10px;">Comentarios Acta</h4>
-				<thead class="table-white">
-				<tr>
-					<!--la cabecera ocupa la etiqueeta th-->
-					<th>Usuario</th>
-					<th>Comentario</th>
-				</tr>
-			</thead>
-			<?php
-			if($ConsultaComentario): foreach($ConsultaComentario as $key):  ?>
-				
-				<tr>
-					<td>   <?= $key['usuario'] ?>    </td>
-					<td> <?= $key['descripcion']  ?>  </td>
-
-					
-
-				</tr>
-				<?php endforeach; endif; ?>
-			</table>	
-		</div>
+			  
 </div>
 
 
