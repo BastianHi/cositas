@@ -68,7 +68,7 @@ include("ActaBackend.php");
 
 			<button type="button" class="btn btn-primary">Ingresar a reunión</button>
 			<button style="margin-left: 70px;"type="button" class="btn btn-primary">Noticias</button>
-			<button style="margin-left: 70px;" type="button" class="btn btn-primary">Registro de Reuniones Realizadas</button>
+			<button href="acta.php" style="margin-left: 70px;" type="button" class="btn btn-primary">Registro de Reuniones Realizadas</button>
 		</div>
 		<hr>
 		
