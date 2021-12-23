@@ -10,5 +10,5 @@ if (isset($_POST["coment1"])) {
 
 $crearActaSQL = "insert into `acta` (`acta`, `id_reu`) values ('$descripcion',".$id_reu.")";
 $crearActa = mysqli_query($con, $crearActaSQL);
-header("Location: index.php");
+header("Location: acta.php");
 ?>
