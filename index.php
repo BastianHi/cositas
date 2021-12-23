@@ -121,7 +121,6 @@ require_once("bd.php");
         </div>
         <div class="modal-body">
             <form  action="crearActa.php"  method="POST"    >
-			<form  action="actaBackend.php"  method="POST"    >
                      <div ><label>Seleccione numero reunion: </label>
 				<select class="form-select" name="id_r" >
 				  	<?php
@@ -133,7 +132,6 @@ require_once("bd.php");
 				</select>
 				  
 				   </div>
-					</form>
 					   <div >
 						   <label>Descripción acta</label>
 						 
