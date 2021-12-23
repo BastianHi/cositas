@@ -96,20 +96,20 @@ require_once("bd.php");
 				<div style="margin-top: 20px;margin-bottom: 10px;">
 					<div  class="espaciador w-50	 m-auto mt-3 border bg-white" style="border-radius:20px;text-align: center;">
 				<tr>
-				<h2 class="titulo m-3">Reunión Junta Vecinos</h2>
-				<h4 class="m-3">Tema: <?= $key['tema']  ?>  </h4>
+				<h1 class="m-3">Tema: <?= $key['tema']  ?> </h1>
+				<h5 class="m-3">Numero reunion:	  <?= $key['id_reunion']  ?>  </h5>
 				<h5 class="m-3">	  <?= $key['descripcion']  ?>  </h5>
 				<h4	 class="m-3">	  <?= $key['fecha']  ?>  </h4>
-				
+				<h4 class="m-3">Lugar:	  <?= $key['lugar']  ?>  </h4>
 				</tr>
-			<div class="col-12 " style="margin-bottom:20px">
-				<button type="button" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#NuevaActa">Agregar acta</button>
-				</div>
+			
 				</div>
 				</div>
 
 				<?php endforeach; endif; ?> 
-				
+				<div class="col-12 " style="margin-bottom:20px;margin-left: 480px;">
+				<button type="button" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#NuevaActa">Agregar acta</button>
+				</div>
 				
 						     <!-- Modal -->
 							 <div class="modal fade" id="NuevaActa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -121,14 +121,19 @@ require_once("bd.php");
         </div>
         <div class="modal-body">
             <form  action="crearActa.php"  method="POST"    >
-			<div class="row">
-                   
+			<form  action="actaBackend.php"  method="POST"    >
+                     <div ><label>Seleccione numero reunion: </label>
+				<select class="form-select" name="id_r" >
+				  	<?php
+				    if($ConsultaReunion): foreach($ConsultaReunion as $key):  ?>
+					
+					<option ><?= $key['id_reunion']  ?>  </option>
+				
+					<?php endforeach; endif; ?>
+				</select>
+				  
 				   </div>
-				   <div >
-					   <div>
-						   <label>Usuario</label>
-						   <input type="text" class="form-control" name="nombre" required>
-					   </div>
+					</form>
 					   <div >
 						   <label>Descripción acta</label>
 						 
