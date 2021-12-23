@@ -100,7 +100,7 @@ require_once("bd.php");
 				<h5 class="m-3">Numero reunion:	  <?= $key['id_reunion']  ?>  </h5>
 				<h5 class="m-3">	  <?= $key['descripcion']  ?>  </h5>
 				<h4	 class="m-3">	  <?= $key['fecha']  ?>  </h4>
-				<h4 class="m-3">Lugar:	  <?= $key['lugar']  ?>  </h4>
+
 				</tr>
 			
 				</div>
